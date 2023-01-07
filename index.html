@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags for Bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Titles and such -->
+    <title>SRVE</title>
+
+    <!-- Scripts -->
+    <script>
+    // Function to unhide the send/receive toast
+    function showSendRecieveToast() {
+      document.getElementById("sendRecieveToast").classList.remove("d-none");
+    }
+
+    $(document).ready(function() {
+      $('#amount1').on('input', function() {
+        $('#amount2').val('Loading...');
+        // Make the POST request to the server
+        $.post('/getprice', { send: $('#send').val(), receive: $('#receive').val(), amount_sent: $('#amount1').val() }, function(response) {
+          // Update the textbox with the response from the server
+          $('#amount2').val(response);
+        });
+      });
+    });
+
+    // Function to update dropdowns when they are the same.
+    function updateDropdowns() {
+      // Get the selected options in both dropdowns
+      var send = document.getElementById("send").value;
+      var receive = document.getElementById("receive").value;
+
+      // Get the options in both dropdowns
+      var sendOptions = document.getElementById("send").options;
+      var receiveOptions = document.getElementById("receive").options;
+
+      // If the selected option in one dropdown is the same as the selected option in the other dropdown, reset both dropdowns to the default value
+      if (send == receive) {
+        for (var i = 0; i < sendOptions.length; i++) {
+          sendOptions[i].disabled = false;
+        }
+        for (var i = 0; i < receiveOptions.length; i++) {
+          receiveOptions[i].disabled = false;
+        }
+        document.getElementById("send").value = "";
+        document.getElementById("receive").value = "";
+        showSendRecieveToast();
+      }
+    }
+    </script>   
+
+    <!-- Styles -->
+    <style>
+      .exchange-box {
+        display: flex;
+        flex-direction: row;
+        width: 550px;
+        height: 240px;
+        border-radius: 4px;
+        background-color: #e0e0e0;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+
+      .address-box {
+        display: inline-block;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 800px;
+        height: 55px;
+        border: 1px solid #ccc;
+        background-color: #ccc;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      .address-box label,
+      .address-box input {
+        display: inline-block;
+        font-weight: bold;
+      }
+
+      .exchange-label {
+        font-weight: bold;
+      }
+    
+      .exchange-select {
+        width: 75px;
+      }
+
+      .exchange-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #amount2 {
+        background-color: #cccccc;
+      }
+    </style>
+  </head>
+  <body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">SRVE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="/exchange">Exchange</a>
+        <a class="nav-item nav-link" href="/status">Exchange Status</a>
+        <a class="nav-item nav-link" href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Toasts -->
+  <div id="sendRecieveToast" class="toast d-none" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded mr-2" alt="...">
+      <strong class="mr-auto">SRVE</strong>
+      <small>Dismiss</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Please make sure your sending and recieving coins aren't the same!
+    </div>
+  </div>
+
+  <center>
+    <br /> <!-- Add some space due to Bootstrap rendering the page with the title too high on the page -->
+    <h1>SRVE</h1>
+    <h4>Exchanging made fast, simple, and private.</h3>
+    <h6>No KYC. No ID. No bullshit.</h3>
+    <br />
+    <form action="/exchange" method="post">
+      <div class="exchange-box">
+        <div>
+          <label class="exchange-label" for="send">You send us:</label><br>
+          <select size="1" class="form-control exchange-select" name="send" id="send" onchange="updateDropdowns()">
+            <option value="BTC">BTC</option>
+            <option value="ETH">ETH</option>
+            <option value="LTC">LTC</option>
+          </select>
+          <br>
+          <label for="amount_label"><b>Amount:</b></label><br>
+          <input type="text" name="amount1" id="amount1">
+        </div>
+        <div class="exchange-image-container">
+          <img src="https://i.ibb.co/rydLTGx/transfer.png" height="50px" width="50px" alt="Exchange">
+        </div>
+        <div>
+          <label class="exchange-label" for="receive">We send you:</label><br>
+          <select size="1" class="form-control exchange-select" name="receive" id="receive" onchange="updateDropdowns()">
+            <option value="ETH">ETH</option>
+            <option value="BTC">BTC</option>
+            <option value="LTC">LTC</option>
+          </select>
+          <br>
+          <label for="amount2_label" id="amount2_label"><b>Amount:</b></label><br>
+          <input type="text" name="amount2" id="amount2" readonly>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="address-box">
+        <label for="address">Address to send to:</label>
+        <input type="text" name="address" style="height: 25px">
+      </div>
+      <br>
+      <input class="btn btn-primary" type="submit" value="Submit">
+      <br />
+      <br />
+      <div class="icon-container">
+        <div class="icon">
+          <a href="https://github.com/RealDoodles/SRVE">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://discord.gg/WD8u63JQny">
+            <i class="fab fa-discord"></i>
+          </a>
+        </div>
+      </div>
+      
+    </form>    
+  </center>
+  </body>
+</html>

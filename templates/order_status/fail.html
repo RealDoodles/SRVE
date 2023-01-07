@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags for Bootstrap -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- Titles and such -->
+        <title>SRVE | Order Confirmation</title>
+
+        <!-- Styling -->
+        <style>
+          .rounded {
+            border-radius: 10px;
+            background-color: #eee;
+          }
+          .inline-block {
+            display: inline-block;
+          }
+          .inline-table {
+            display: inline-table;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+          }
+        </style>
+    </head>
+    <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">SRVE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/">Home</a>
+            <a class="nav-item nav-link" href="/exchange">Exchange <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/status">Exchange Status</a>
+            <a class="nav-item nav-link" href="/contact">Contact Us</a>
+        </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <br />
+    <center>
+    <h1>Order Failed</h1>
+    <p>Order ID: <b>{{ order_id }}</b></p>
+    </center>
+    <br />
+    <center>
+      <p>It looks like your order failed, if you paid money, please send a support request on our <b><a href="/contact">contact page</a></b>.</p>
+    </center>
+    <!-- <p>Send {{ amountToSend }} {{ fr }} to {{ address }} to complete the order.</p> -->
+  </body>
+</html>
