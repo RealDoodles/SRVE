@@ -8,6 +8,19 @@ You go to SRVE and input an amount -> We return a recieve price for your pair ->
 
 And it's all baked into a clean UI free from distractions and ads! We're commission free (except for partner exchange fees), and (of course) totally free to use, with no sign up required!
 
+## Fixedfloat API
+The fixedfloat API (repaired and edited) will be published in the coming future (as the project has been deleted on GitHub), and has been archived and edited to work with my program. If you plan on self-hosting this, please send me a message on Discord (XNO#5560) to obtain the edited copy (or if you just want the archive)!
+
+This module, though, is still avaliable to install on pip!
+
+## Self Hosting
+Self hosting is totally possible! Here's how to do it!
+
+1. Install Python
+2. Install flask and fixedfloat from pip
+3. Type ```flask run``` to spin up a development server for personal use
+4. Navigate to ```http://127.0.0.1/``` to use the exchange!
+
 ## Status
 *Status:* **Code Completed!**
 
