@@ -18,6 +18,7 @@ Self hosting is totally possible! Here's how to do it!
 
 1. Install Python
 2. Install flask and fixedfloat from pip
+3. Edit main.py ```lines 12 and 13``` with your FixedFloat API key (get this from [fixedfloat.com/apikey](https://fixedfloat.com/apikey))
 3. Type ```flask run``` to spin up a development server for personal use
 4. Navigate to ```http://127.0.0.1/``` to use the exchange!
 
