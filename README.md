@@ -1,6 +1,8 @@
 # SRVE - Crypto for the People
 SRVE is an open-source cryptocurrency exchange powered by LOTS of exchanges! Learn how we work below!
 
+[Discord](https://discord.gg/bwRwdbADnH) | [Website (Soon)](#)
+
 ## How it works
 SRVE uses other (no KYC/instant/DEX) exchange's APIs to preform requests on your behalf for privacy or ease-of-use purposes. Here's how a transaction works!
 
@@ -38,3 +40,6 @@ SRVE's first release for code is completed, and we're ready to launch our servic
 (**$0.00/?.??**) -> Buy me a coffee! (all coffee donations will go to the domain until everything is paid for)
 
 **Want to donate in another coin?** Just contact us on Discord (XNO#5560 - Server coming soon)!
+
+## Our Accounts/Threads
+- BitcoinTalk ([Profle](https://bitcointalk.org/index.php?action=profile;u=3527144)) - [Announcement Thread](https://bitcointalk.org/index.php?topic=5433409)
