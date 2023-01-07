@@ -23,7 +23,8 @@ Self hosting is totally possible! Here's how to do it!
 4. Navigate to ```http://127.0.0.1/``` to use the exchange!
 
 ## Status
-*Status:* **Code Completed!**
+*Status:* **Code Completed for Desktop!**
+*In Progress/Next Update:* **Mobile-friendly UI**
 
 SRVE's first release for code is completed, and we're ready to launch our services (once a domain is aquired)! Come fund our project with the crypto addresses below:
 
