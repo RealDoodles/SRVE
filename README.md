@@ -28,18 +28,7 @@ Self hosting is totally possible! Here's how to do it!
 *Status:* **Code Completed for Desktop!**
 *In Progress/Next Update:* **Mobile-friendly UI**
 
-SRVE's first release for code is completed, and we're ready to launch our services (once a domain is aquired)! Come fund our project with the crypto addresses below:
-
-- BTC: ```bc1qt4ujf6ne52457ye3v7un4pu2y4t0pvx9gnj585```
-- ETH (**ETH Network, ERC20**): ```0xD22f1D2Fd6fBd70F99eE70a5a244bF8D59c331EA```
-- LTC: ```LMQT7hfRBzDWZWAwnh7anoD5Zt73jSnzm5```
-- SOL: ```s6oVrxDWaa9oNeC5a7PHMyhdsZBKx2yrKB7GqSfKk79```
-
-(**$0.00/$8.98**) -> .exchange domain registration for one year
-(**$0.00/$0.00**) -> Hosting (our own hardware, so no donations needed!)
-(**$0.00/?.??**) -> Buy me a coffee! (all coffee donations will go to the domain until everything is paid for)
-
-**Want to donate in another coin?** Just contact us on Discord (XNO#5560 - Server coming soon)!
+SRVE's first release for code is completed, and we're ready to launch our services (once a domain is aquired)!
 
 ## Our Accounts/Threads
 - BitcoinTalk ([Profle](https://bitcointalk.org/index.php?action=profile;u=3527144)) - [Announcement Thread](https://bitcointalk.org/index.php?topic=5433409)
